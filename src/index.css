@@ -1,13 +1,86 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*-----------------------
+FORM STEPPER STYLES         
+-----------------------*/
+@layer components {
+  .current-step {
+    @apply absolute flex items-center w-10 h-10 rounded-full
+    bg-white border-2 border-primary-400
+
+    text-lg text-white
+    transition-all transform duration-150 ease-out;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .completed-step {
+    @apply absolute w-10 h-10 rounded-full flex items-center 
+    text-lg text-white
+    transition-all transform duration-150 ease-out opacity-100;
+  }
+}
+
+@layer components {
+  .incomplete-step {
+    @apply absolute w-10 h-10 rounded-full flex items-center 
+    text-lg text-white
+    bg-gray-100 border-2 border-gray-200
+    transition-all transform duration-150 ease-out;
+  }
+}
+
+@layer components {
+  .line-container {
+    @apply absolute flex mt-2 items-center align-middle
+    content-center h-10 rounded-full;
+  }
+}
+
+@layer components {
+  .line-base {
+    @apply w-full bg-gray-100 rounded-full items-center
+    align-middle flex-1;
+  }
+}
+
+@layer components {
+  .line-filled {
+    @apply py-1 rounded-full transition-all duration-700 delay-150 ease-in-out;
+  }
+}
+
+/* Standard Buttons */
+@layer components {
+  .btn-primary {
+    @apply border-0
+    bg-primary-main
+    text-white
+    hover:bg-gray-700
+    focus:outline-none
+    focus:ring-0
+    transition-all duration-150 ease-in-out;
+  }
+}
+
+/* Large Button */
+@layer components {
+  .btn-lg {
+    @apply inline-flex h-14 items-center px-8 justify-center
+    text-center
+    font-semibold rounded-full
+    shadow-none;
+  }
+}
+
+@layer components {
+  .btn-primary-outline {
+    @apply border-2 border-primary-main text-primary-main
+    opacity-100 hover:bg-primary-main hover:text-white focus:bg-primary-main
+    focus:text-white focus:ring-2 focus:border-primary-main focus:ring-opacity-75
+        transition-all duration-150 ease-in-out;
+  }
 }
