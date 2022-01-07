@@ -11,7 +11,7 @@ const Form = () => {
 
   return (
     <CountContext.Provider value={{ count, setCount }}>
-      <div className="container bg-white py-12 px-4 text-center">
+      <div className="container px-4 py-12 mx-auto text-center bg-gray-100n">
         <h1 className="text-3xl font-bold">Multi-Step Form with Wizard</h1>
 
         <div className="w-full h-32 transition-all duration-150">
@@ -456,7 +456,7 @@ const Form = () => {
                 onClick={() => {
                   setCount(1);
                 }}
-                className="bg-gray-400 px-4 py-2 rounded-lg"
+                className="px-4 py-2 bg-gray-400 rounded-lg"
               >
                 Start Again
               </button>
